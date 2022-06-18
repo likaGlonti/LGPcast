@@ -1,5 +1,6 @@
 package com.finalexam.podcasts.data
 
+import com.finalexam.podcasts.data.models.Genre
 import com.finalexam.podcasts.data.models.Genres
 import retrofit2.http.GET
 

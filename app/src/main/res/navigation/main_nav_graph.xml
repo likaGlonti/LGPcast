@@ -15,8 +15,5 @@
         android:name="com.finalexam.podcasts.presentation.search.SearchPodcastsFragment"
         android:label="fragment_search_podcasts"
         tools:layout="@layout/fragment_search_podcasts" >
-        <action
-            android:id="@+id/action_searchPodcastsFragment_to_bestPodcastsDashboardFragment"
-            app:destination="@id/bestPodcastsDashboardFragment" />
     </fragment>
 </navigation>

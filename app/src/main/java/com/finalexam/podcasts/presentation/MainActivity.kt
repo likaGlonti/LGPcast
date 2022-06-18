@@ -2,6 +2,7 @@ package com.finalexam.podcasts.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
 import com.finalexam.podcasts.R
 
 class MainActivity : AppCompatActivity() {
