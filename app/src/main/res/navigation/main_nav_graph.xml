@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/bestPodcastsDashboardFragment">
+
+    <fragment
+        android:id="@+id/bestPodcastsDashboardFragment"
+        android:name="com.finalexam.podcasts.presentation.best.BestPodcastsDashboardFragment"
+        android:label="fragment_best_podcasts_dashboard"
+        tools:layout="@layout/fragment_best_podcasts_dashboard" />
+    <fragment
+        android:id="@+id/searchPodcastsFragment"
+        android:name="com.finalexam.podcasts.presentation.search.SearchPodcastsFragment"
+        android:label="fragment_search_podcasts"
+        tools:layout="@layout/fragment_search_podcasts" >
+        <action
+            android:id="@+id/action_searchPodcastsFragment_to_bestPodcastsDashboardFragment"
+            app:destination="@id/bestPodcastsDashboardFragment" />
+    </fragment>
+</navigation>
