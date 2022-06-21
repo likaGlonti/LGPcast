@@ -8,5 +8,5 @@ import kotlinx.serialization.Serializable
 data class Genre(
     val id: Int,
     val name: String,
-    @SerialName("parent_id") val parentId: Int
+    @SerialName("parent_id") val parentId: Int = 0
 )
