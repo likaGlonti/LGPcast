@@ -9,11 +9,23 @@
         android:id="@+id/bestPodcastsDashboardFragment"
         android:name="com.finalexam.podcasts.presentation.best.BestPodcastsDashboardFragment"
         android:label="fragment_best_podcasts_dashboard"
-        tools:layout="@layout/fragment_best_podcasts_dashboard" />
+        tools:layout="@layout/fragment_best_podcasts_dashboard" >
+        <action
+            android:id="@+id/action_bestPodcastsDashboardFragment_to_podcastsByGenre"
+            app:destination="@id/podcastsByGenre" />
+        <action
+            android:id="@+id/action_bestPodcastsDashboardFragment_to_searchPodcastsFragment"
+            app:destination="@id/searchPodcastsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchPodcastsFragment"
         android:name="com.finalexam.podcasts.presentation.search.SearchPodcastsFragment"
         android:label="fragment_search_podcasts"
         tools:layout="@layout/fragment_search_podcasts" >
     </fragment>
+    <fragment
+        android:id="@+id/podcastsByGenre"
+        android:name="com.finalexam.podcasts.PodcastsByGenre"
+        android:label="fragment_podcasts_by_genre"
+        tools:layout="@layout/fragment_podcasts_by_genre" />
 </navigation>
