@@ -2,4 +2,26 @@
     <string name="app_name">LGPcast</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="item_bkg">
+        <item>#F44236</item>
+        <item>#EA1D62</item>
+        <item>#374046</item>
+        <item>#9C27B1</item>
+        <item>#673BB7</item>
+        <item>#3F50B5</item>
+        <item>#2096F3</item>
+        <item>#00A8F5</item>
+        <item>#01BDD5</item>
+        <item>#009688</item>
+        <item>#4CAF4F</item>
+        <item>#8BC249</item>
+        <item>#CDDC39</item>
+        <item>#FEEB3B</item>
+        <item>#FEC008</item>
+        <item>#FF9700</item>
+        <item>#FF5721</item>
+        <item>#785447</item>
+        <item>#9E9E9E</item>
+        <item>#607D8B</item>
+    </string-array>
 </resources>

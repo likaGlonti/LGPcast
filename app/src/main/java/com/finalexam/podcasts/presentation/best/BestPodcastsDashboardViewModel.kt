@@ -21,7 +21,7 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository) : ViewModel
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = repository.genres()) {
                 is Response.Success -> {
-                    genres.emit(response.data.genres.map {
+                    genres.emit(response.data.genres.take(20).map {
                         GenrePresentationItem(
                             it.id,
                             name = it.name,
