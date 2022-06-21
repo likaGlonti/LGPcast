@@ -19,7 +19,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="18sp"
-            tools:text="Finance" />
+            tools:text="Finance"
+            android:fontFamily="@font/roboto_light"
+            />
     </FrameLayout>
 
 </androidx.cardview.widget.CardView>

@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2875686645507813" />
+        <entry key="app/src/main/res/layout/fragment_best_podcasts_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_podcasts_by_genre.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_search_podcasts.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_genre.xml" value="0.335" />
       </map>
     </option>
