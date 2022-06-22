@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 class BestPodcastsDashboardFragment : Fragment(R.layout.fragment_best_podcasts_dashboard) {
     private val viewModel: BestPodcastsDashboardViewModel by lazy {
         BestPodcastsDashboardViewModelFactory(
-            Module.repository
+            Module.repository, requireContext()
         ).create(BestPodcastsDashboardViewModel::class.java)
     }
 
