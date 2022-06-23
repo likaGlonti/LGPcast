@@ -6,7 +6,6 @@ import com.finalexam.podcasts.domain.PodcastsRepository
 import com.finalexam.podcasts.domain.Response
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
 class PodcastsRepositoryImpl(private val service: PodcastsService) : PodcastsRepository {
     override suspend fun genres(): Response<Genres> =

@@ -15,6 +15,16 @@
         app:layout_constraintStart_toStartOf="@id/startGuideline"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/podcasts"
+        android:layout_marginVertical="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/genres" />
+
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
         android:layout_height="match_parent"

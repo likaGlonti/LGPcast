@@ -61,6 +61,10 @@ dependencies {
     def lifecycle_version = "2.4.1"
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
     implementation "androidx.work:work-runtime-ktx:$versions_work"
-    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation("io.coil-kt:coil:2.1.0")
 }

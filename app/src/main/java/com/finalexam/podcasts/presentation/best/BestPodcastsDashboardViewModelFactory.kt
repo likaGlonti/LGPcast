@@ -1,6 +1,5 @@
 package com.finalexam.podcasts.presentation.best
 
-import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -12,7 +11,7 @@ class BestPodcastsDashboardViewModelFactory(
 ) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return modelClass.getConstructor(PodcastsRepository::class.java)
+        return modelClass.getConstructor(PodcastsRepository::class.java, Context::class.java)
             .newInstance(repository, context)
     }
 }
