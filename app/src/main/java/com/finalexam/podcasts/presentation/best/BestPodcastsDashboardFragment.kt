@@ -12,6 +12,7 @@ import com.finalexam.podcasts.R
 import com.finalexam.podcasts.databinding.FragmentBestPodcastsDashboardBinding
 import com.finalexam.podcasts.di.Module
 import com.finalexam.podcasts.presentation.best.adapter.GenresAdapter
+import com.finalexam.podcasts.presentation.best.adapter.PodcastsByTitleAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -35,25 +36,43 @@ class BestPodcastsDashboardFragment : Fragment(R.layout.fragment_best_podcasts_d
         gridLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         genres.layoutManager = gridLayoutManager
 
-        val adapter = GenresAdapter()
-        genres.adapter = adapter
+        val genresAdapter = GenresAdapter()
+        genres.adapter = genresAdapter
+
+        val podcastsByTitleAdapter = PodcastsByTitleAdapter()
+        podcasts.layoutManager = LinearLayoutManager(requireContext())
+        podcasts.adapter = podcastsByTitleAdapter
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.genres.collectLatest {
-                    adapter.submitList(it)
+                    genresAdapter.submitList(it)
                 }
             }
         }
+        lifecycleScope.launch{
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.dashboardPodcasts.collectLatest {
+                    podcastsByTitleAdapter.submitList(it)
+                }
+            }
+        }
+        observeViewModel()
     }
 
-    private fun observeViewModel() {
+    private fun FragmentBestPodcastsDashboardBinding.observeViewModel() {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.onGenreClick.collectLatest {
 
                 }
             }
+        }
+        viewModel.workInfo.observe(viewLifecycleOwner) { workInfo ->
+            if (workInfo == null)
+                return@observe
+            if (workInfo.state.isFinished)
+                viewModel.getData()
         }
     }
 }

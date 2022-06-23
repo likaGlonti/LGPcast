@@ -14,5 +14,9 @@ interface PodcastsService {
     suspend fun getGenres(): Genres
 
     @GET("typeahead")
-    suspend fun typeaHead(@Query("q") name: String): TypeaHeadPodcasts
+    suspend fun typeaHead(
+        @Query("q") name: String,
+        @Query("show_podcasts") showPodcasts: Int = 1,
+        @Query("show_genres") showGenres: Int = 1,
+    ): TypeaHeadPodcasts
 }
