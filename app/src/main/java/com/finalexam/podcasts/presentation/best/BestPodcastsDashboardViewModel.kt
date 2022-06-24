@@ -27,11 +27,11 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
         .build()
     val workInfo: LiveData<WorkInfo> = worker.getWorkInfoByIdLiveData(podcastsWorker.id)
 
-    val genres = MutableStateFlow<List<GenrePresentationItem>>(emptyList())
+    private val genres = MutableStateFlow<List<GenrePresentationItem>>(emptyList())
 
 
-    private val _dashboardPodcasts = MutableStateFlow<List<BasePodcast>>(emptyList())
-    val dashboardPodcasts: StateFlow<List<BasePodcast>> = _dashboardPodcasts
+    private val _dashboardPodcasts = MutableStateFlow<List<BaseDashboardItem>>(emptyList())
+    val dashboardPodcasts: StateFlow<List<BaseDashboardItem>> = _dashboardPodcasts
 
     val onGenreClick = MutableSharedFlow<Int>(replay = 1)
 
@@ -64,14 +64,16 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
     }
 
     fun getData() {
-        viewModelScope.launch() {
-            val podcasts = arrayListOf<BasePodcast>()
+        viewModelScope.launch {
+            val podcasts = arrayListOf<BaseDashboardItem>()
             App.instance.db.calorieDao().getAll().apply {
                 this.groupBy { it.podcastType }.forEach {
+                    podcasts.add(GenresAdapterItem(genres.value))
                     podcasts.add(Title(it.key))
                     podcasts.add(Podcasts(it.value.map { list -> list.toPodcast() }))
                 }
             }
+
             _dashboardPodcasts.emit(podcasts)
         }
     }

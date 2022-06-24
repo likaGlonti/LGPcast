@@ -10,18 +10,18 @@ import com.finalexam.podcasts.R
 import com.finalexam.podcasts.databinding.ItemGenreBinding
 import com.finalexam.podcasts.presentation.entity.GenrePresentationItem
 
-class GenresAdapter : ListAdapter<GenrePresentationItem, GenresViewHolder>(GenresDiffItem()) {
+class GenresAdapter : ListAdapter<GenrePresentationItem, GenreViewHolder>(GenresDiffItem()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = GenresViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = GenreViewHolder(
         ItemGenreBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    override fun onBindViewHolder(holder: GenresViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GenreViewHolder, position: Int) {
         holder.bind(getItem(position),position)
     }
 }
 
-class GenresViewHolder(private val binding: ItemGenreBinding) :
+class GenreViewHolder(private val binding: ItemGenreBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(item: GenrePresentationItem, position:Int) = with(binding) {
         genreName.text = item.name
