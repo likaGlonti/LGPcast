@@ -15,11 +15,11 @@ class PodcastsWorker(context: Context, params: WorkerParameters) : CoroutineWork
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
         return@withContext try {
             val names = arrayListOf(
-                "star wars",
-                "hunger games",
-                "harry potter",
-                "stranger things",
-                "game of thrones"
+                "Star wars",
+                "Hunger games",
+                "Harry potter",
+                "Stranger things",
+                "Game of thrones"
             )
 
             val dao = App.instance.db.calorieDao()

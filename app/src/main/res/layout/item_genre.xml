@@ -5,23 +5,29 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="8dp"
-    >
+    android:background="@color/white_transparent"
+    app:cardCornerRadius="8dp">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="30dp">
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/podcast" />
 
         <TextView
             android:id="@+id/genreName"
+            style="@style/TextAppearance.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="18sp"
-            tools:text="Finance"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/roboto_light"
-            />
-    </FrameLayout>
+            android:gravity="center"
+            android:textSize="15sp"
+            tools:text="Finance" />
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
