@@ -1,7 +1,8 @@
-package com.finalexam.podcasts.data
+package com.finalexam.podcasts.data.remote
 
 import com.finalexam.podcasts.data.models.Genres
 import com.finalexam.podcasts.data.models.Podcast
+import com.finalexam.podcasts.data.models.PodcastById
 import com.finalexam.podcasts.domain.PodcastsRepository
 import com.finalexam.podcasts.domain.Response
 import kotlinx.coroutines.Dispatchers
@@ -21,6 +22,15 @@ class PodcastsRepositoryImpl(private val service: PodcastsService) : PodcastsRep
         withContext(Dispatchers.IO) {
             return@withContext try {
                 Response.Success(service.typeaHead(name).podcasts)
+            } catch (e: Exception) {
+                Response.Error(e)
+            }
+        }
+
+    override suspend fun getPodcastById(id: String): Response<PodcastById> =
+        withContext(Dispatchers.IO) {
+            return@withContext try {
+                Response.Success(service.getPodcastById(id))
             } catch (e: Exception) {
                 Response.Error(e)
             }

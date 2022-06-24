@@ -27,7 +27,8 @@
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
             android:textSize="15sp"
-            tools:text="Finance" />
+            tools:text="Finance"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

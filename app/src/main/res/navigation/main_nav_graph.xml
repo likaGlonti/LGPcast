@@ -5,27 +5,24 @@
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/bestPodcastsDashboardFragment">
 
+
     <fragment
         android:id="@+id/bestPodcastsDashboardFragment"
         android:name="com.finalexam.podcasts.presentation.best.BestPodcastsDashboardFragment"
         android:label="fragment_best_podcasts_dashboard"
-        tools:layout="@layout/fragment_best_podcasts_dashboard" >
+        tools:layout="@layout/fragment_best_podcasts_dashboard">
         <action
-            android:id="@+id/action_bestPodcastsDashboardFragment_to_podcastsByGenre"
-            app:destination="@id/podcastsByGenre" />
-        <action
-            android:id="@+id/action_bestPodcastsDashboardFragment_to_searchPodcastsFragment"
-            app:destination="@id/searchPodcastsFragment" />
+            android:id="@+id/action_bestPodcastsDashboardFragment_to_podcastsPlayListFragment"
+            app:destination="@id/podcastsPlayListFragment">
+            <argument
+                android:name="podcastName"
+                app:argType="string" />
+
+        </action>
     </fragment>
     <fragment
-        android:id="@+id/searchPodcastsFragment"
-        android:name="com.finalexam.podcasts.presentation.search.SearchPodcastsFragment"
-        android:label="fragment_search_podcasts"
-        tools:layout="@layout/fragment_search_podcasts" >
-    </fragment>
-    <fragment
-        android:id="@+id/podcastsByGenre"
-        android:name="com.finalexam.podcasts.PodcastsByGenreFragment"
-        android:label="fragment_podcasts_by_genre"
-        tools:layout="@layout/fragment_podcasts_by_genre" />
+        android:id="@+id/podcastsPlayListFragment"
+        android:name="com.finalexam.podcasts.presentation.player.PodcastsPlayListFragment"
+        android:label="PodcastsPlayListFragment"
+        tools:layout="@layout/fragment_podcasts_playlist" />
 </navigation>

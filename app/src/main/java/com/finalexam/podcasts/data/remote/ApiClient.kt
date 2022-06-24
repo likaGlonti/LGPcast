@@ -1,4 +1,4 @@
-package com.finalexam.podcasts.data
+package com.finalexam.podcasts.data.remote
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.ExperimentalSerializationApi

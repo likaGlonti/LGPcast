@@ -33,6 +33,9 @@ class PodcastsViewHolder(private val binding: PodcastChildItemBinding) :
         podcastImage.load(item.image) {
             crossfade(true)
         }
+        root.setOnClickListener {
+            item.onClick.invoke()
+        }
         title.text = item.titleOriginal
     }
 }

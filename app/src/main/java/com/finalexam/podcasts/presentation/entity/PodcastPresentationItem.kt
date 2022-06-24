@@ -5,9 +5,11 @@ data class PodcastPresentationItem(
     val id: String,
     val image: String,
     val titleOriginal: String,
+    val onClick: (() -> Unit)
 )
 
-data class Podcasts(val podcasts: List<PodcastPresentationItem>) : BaseDashboardItem
+data class Podcasts(val podcasts: List<PodcastPresentationItem>) :
+    BaseDashboardItem
 
 data class Title(val podcastTypeString: String) : BaseDashboardItem
 

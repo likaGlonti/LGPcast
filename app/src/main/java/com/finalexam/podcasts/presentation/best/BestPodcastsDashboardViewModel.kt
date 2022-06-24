@@ -33,7 +33,7 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
     private val _dashboardPodcasts = MutableStateFlow<List<BaseDashboardItem>>(emptyList())
     val dashboardPodcasts: StateFlow<List<BaseDashboardItem>> = _dashboardPodcasts
 
-    val onGenreClick = MutableSharedFlow<Int>(replay = 1)
+    val onPodcastClick = MutableSharedFlow<String>(replay = 1)
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -44,7 +44,6 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
                             it.id,
                             name = it.name,
                             onClick = {
-                                onGenreClick.tryEmit(it.id)
                             }
                         )
                     })
@@ -66,9 +65,9 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
     fun getData() {
         viewModelScope.launch {
             val podcasts = arrayListOf<BaseDashboardItem>()
+            podcasts.add(GenresAdapterItem(genres.value))
             App.instance.db.calorieDao().getAll().apply {
                 this.groupBy { it.podcastType }.forEach {
-                    podcasts.add(GenresAdapterItem(genres.value))
                     podcasts.add(Title(it.key))
                     podcasts.add(Podcasts(it.value.map { list -> list.toPodcast() }))
                 }
@@ -82,6 +81,7 @@ class BestPodcastsDashboardViewModel(repository: PodcastsRepository, context: Co
         PodcastPresentationItem(
             id = podcastId,
             image = image,
-            titleOriginal = titleOriginal
+            titleOriginal = titleOriginal,
+            onClick = { onPodcastClick.tryEmit(podcastId) }
         )
 }

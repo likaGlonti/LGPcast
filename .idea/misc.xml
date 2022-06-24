@@ -3,13 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lika_Glonti/AndroidStudioProjects/LGPcast/app/src/main/res/layout/fragment_best_podcasts_dashboard.xml" value="0.19746376811594202" />
-        <entry key="..\:/Users/Lika_Glonti/AndroidStudioProjects/LGPcast/app/src/main/res/layout/podcast_child_item.xml" value="0.72" />
-        <entry key="..\:/Users/Lika_Glonti/AndroidStudioProjects/LGPcast/app/src/main/res/layout/podcasts_item.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/Lika_Glonti/AndroidStudioProjects/LGPcast/app/src/main/res/layout/title_item.xml" value="0.184765625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2875686645507813" />
-        <entry key="app/src/main/res/layout/fragment_best_podcasts_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_best_podcasts_dashboard.xml" value="0.2354533152909337" />
+        <entry key="app/src/main/res/layout/fragment_podcast_player.xml" value="0.14792299898682879" />
         <entry key="app/src/main/res/layout/fragment_podcasts_by_genre.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_podcasts_playlist.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/layout/fragment_search_podcasts.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_genre.xml" value="0.335" />
         <entry key="app/src/main/res/layout/podcast_child_item.xml" value="0.3182291666666667" />
