@@ -6,6 +6,8 @@ LGPcast is an easy-to-use podcast player for android users, making listening to 
 
 
 ### Screenshots: 
+<img width="176" alt="2" src="https://user-images.githubusercontent.com/60490214/175763801-f968b468-6c38-4825-af00-a1532aa1e9e5.png"> <img width="174" alt="1" src="https://user-images.githubusercontent.com/60490214/175763797-ec5bea0f-e348-4259-ab68-791eaa218932.png"> 
+
 
 ### Installation and Setup Instructions:
 
@@ -28,12 +30,12 @@ Clean architecture + MVVM
 
 
 ### Technologies:
--Navigation component
--Work manager
--Room
--RecyclerView
--Coil for image loading
--Kotlin serialization
--Retrofit
--Coroutines and StateFlow
--Broadcast Reciever
+- Navigation component
+- Work manager
+- Room
+- RecyclerView
+- Coil for image loading
+- Kotlin serialization
+- Retrofit
+- Coroutines and StateFlow
+- Broadcast Receiver
