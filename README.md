@@ -39,3 +39,4 @@ Clean architecture + MVVM
 - Retrofit
 - Coroutines and StateFlow
 - Broadcast Receiver
+- ViewPager2
