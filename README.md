@@ -30,12 +30,12 @@ Clean architecture + MVVM
 
 
 ### Technologies:
--Navigation component
--Work manager
--Room
--RecyclerView
--Coil for image loading
--Kotlin serialization
--Retrofit
--Coroutines and StateFlow
--Broadcast Reciever
+- Navigation component
+- Work manager
+- Room
+- RecyclerView
+- Coil for image loading
+- Kotlin serialization
+- Retrofit
+- Coroutines and StateFlow
+- Broadcast Reciever
