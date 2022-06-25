@@ -1,7 +1,9 @@
 package com.finalexam.podcasts.presentation.player
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -16,8 +18,19 @@ import kotlinx.coroutines.launch
 
 class PodcastsPlayListFragment : Fragment() {
 
-   private val viewModel: PodcastPlayListViewModel by lazy {
+    private lateinit var binding: FragmentPodcastsPlaylistBinding
+
+    private val viewModel: PodcastPlayListViewModel by lazy {
         PodcastPlayListViewModelFactory(Module.repository).create(PodcastPlayListViewModel::class.java)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentPodcastsPlaylistBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

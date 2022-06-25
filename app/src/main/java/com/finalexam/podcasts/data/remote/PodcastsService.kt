@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface PodcastsService {
 
     @GET("podcasts/{id}")
-    fun getPodcastById(@Path("id") id: String): PodcastById
+    suspend fun getPodcastById(@Path("id") id: String): PodcastById
 
     @GET("genres")
     suspend fun getGenres(): Genres

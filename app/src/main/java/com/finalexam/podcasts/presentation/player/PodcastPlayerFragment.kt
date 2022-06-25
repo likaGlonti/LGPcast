@@ -19,6 +19,7 @@ class PodcastPlayerFragment : Fragment(R.layout.fragment_podcast_player) {
             podcastImage.load(episode?.image) {
                 crossfade(true)
             }
+            title.text = episode?.title ?: ""
         }
     }
 
